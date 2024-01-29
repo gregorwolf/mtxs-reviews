@@ -1,0 +1,10 @@
+###
+PUT http://localhost:4004/-/cds/saas-provisioning/tenant/t1 HTTP/1.1
+Content-Type: application/json
+Authorization: Basic alice:
+
+{
+  "subscribedTenantId": "t1",
+  "subscribedSubdomain": "dev-azure-sub1",
+  "eventType": "CREATE"
+}
