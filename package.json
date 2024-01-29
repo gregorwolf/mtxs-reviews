@@ -9,7 +9,9 @@
     "@sap/cds": "^7",
     "@sap/cds-mtxs": "^1.9",
     "express": "^4",
-    "@sap/cds-hana": "^2"
+    "@sap/cds-hana": "^2",
+    "@sap/xssec": "^3",
+    "passport": "^0"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -33,6 +35,10 @@
             "name": "mtxs-reviews-db"
           }
         }
+      },
+      "[production]": {
+        "auth": "xsuaa",
+        "db": "hana"
       }
     }
   }
