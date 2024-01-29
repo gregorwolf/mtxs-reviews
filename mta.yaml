@@ -16,6 +16,7 @@ modules:
     parameters:
       buildpack: nodejs_buildpack
     build-parameters:
+      ignore: ["node_modules/"]
       builder: npm
     provides:
       - name: srv-api # required by consumers of CAP services (e.g. approuter)
@@ -46,6 +47,8 @@ resources:
     parameters:
       service: service-manager
       service-plan: container
+  - name: txs-bookshop-db
+    type: org.cloudfoundry.existing-service
   - name: mtxs-reviews-registry
     type: org.cloudfoundry.managed-service
     requires:
