@@ -1,5 +1,5 @@
 {
-  "name": "mtxs-ratings-mtx",
+  "name": "mtxs-reviews-mtx",
   "dependencies": {
     "@sap/cds": "^7",
     "@sap/cds-hana": "^2",

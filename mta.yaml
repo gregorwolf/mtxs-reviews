@@ -1,7 +1,7 @@
 _schema-version: "3.1"
-ID: mtxs-ratings
+ID: mtxs-reviews
 version: 1.0.0
-description: "Multitenant CAP Ratings"
+description: "Multitenant CAP Reviews"
 parameters:
   enable-parallel-deployments: true
 build-parameters:
@@ -10,7 +10,7 @@ build-parameters:
       commands:
         - npx cds build --production
 modules:
-  - name: mtxs-ratings-srv
+  - name: mtxs-reviews-srv
     type: nodejs
     path: gen/srv
     parameters:
@@ -25,9 +25,9 @@ modules:
         properties:
           mtx-url: ${default-url}
     requires:
-      - name: mtxs-ratings-db
+      - name: mtxs-reviews-db
 
-  # - name: mtxs-ratings-mtx
+  # - name: mtxs-reviews-mtx
   #   type: nodejs
   #   path: gen/mtx/sidecar
   #   build-parameters:
@@ -41,12 +41,12 @@ modules:
   #         mtx-url: ${default-url}
 
 resources:
-  - name: mtxs-ratings-db
+  - name: mtxs-reviews-db
     type: org.cloudfoundry.managed-service
     parameters:
       service: service-manager
       service-plan: container
-  - name: mtxs-ratings-registry
+  - name: mtxs-reviews-registry
     type: org.cloudfoundry.managed-service
     requires:
       - name: mtx-api
@@ -54,10 +54,10 @@ resources:
       service: saas-registry
       service-plan: application
       config:
-        xsappname: mtxs-ratings-${org}-${space}
-        appName: mtxs-ratings-${org}-${space}
-        displayName: mtxs-ratings
-        description: Multitenant CAP Ratings
+        xsappname: mtxs-reviews-${org}-${space}
+        appName: mtxs-reviews-${org}-${space}
+        displayName: mtxs-reviews
+        description: Multitenant CAP Reviews
         category: "Category"
         appUrls:
           getDependencies: ~{mtx-api/mtx-url}/-/cds/saas-provisioning/dependencies

@@ -1,7 +1,7 @@
 {
-  "name": "mtxs-ratings",
+  "name": "mtxs-reviews",
   "version": "1.0.0",
-  "description": "Multitenant CAP Ratings",
+  "description": "Multitenant CAP Reviews",
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
@@ -27,7 +27,7 @@
           "vcap": {
             "label": "service-manager",
             "plan": "container",
-            "name": "mtxs-ratings-db"
+            "name": "mtxs-reviews-db"
           }
         }
       }
