@@ -1,0 +1,21 @@
+###
+POST http://localhost:4005/-/cds/deployment/subscribe HTTP/1.1
+Content-Type: application/json
+Authorization: Basic alice:
+
+{ 
+  "tenant": "t1"
+}
+###
+POST http://localhost:4005/-/cds/deployment/subscribe HTTP/1.1
+Content-Type: application/json
+Authorization: Basic erin:
+
+{ 
+  "tenant": "t2"
+}
+###
+POST http://localhost:4005/-/cds/deployment/subscribe HTTP/1.1
+Content-Type: application/json
+
+{ "tenant": "t1" }
