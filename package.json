@@ -1,7 +1,7 @@
 {
   "name": "mtxs-ratings",
   "version": "1.0.0",
-  "description": "A simple CAP project.",
+  "description": "Multitenant CAP Ratings",
   "repository": "<Add your repository here>",
   "license": "UNLICENSED",
   "private": true,
@@ -12,16 +12,25 @@
     "@sap/cds-hana": "^2"
   },
   "devDependencies": {
-    "@cap-js/sqlite": "^1"
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^7"
   },
   "scripts": {
     "start": "cds-serve"
   },
   "cds": {
-    "profile": "with-mtx-sidecar",
     "requires": {
       "multitenancy": true,
-      "db": "hana"
+      "db": {
+        "[production]": {
+          "kind": "hana-cloud",
+          "vcap": {
+            "label": "service-manager",
+            "plan": "container",
+            "name": "mtxs-ratings-db"
+          }
+        }
+      }
     }
   }
 }
