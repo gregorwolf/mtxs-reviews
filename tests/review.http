@@ -1,0 +1,17 @@
+###
+GET http://localhost:4004/odata/v4/review
+Authorization: Basic alice:
+###
+GET http://localhost:4004/odata/v4/review/Reviews
+Authorization: Basic alice:
+###
+POST http://localhost:4004/odata/v4/review/Reviews
+Authorization: Basic alice:
+Content-Type: application/json
+
+{
+  "subject": "1",
+  "rating": 3,
+  "title": "Average",
+  "text": "OK but could be better"
+}
