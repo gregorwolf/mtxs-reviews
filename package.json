@@ -27,18 +27,15 @@
     "requires": {
       "multitenancy": true,
       "db": {
-        "[production]": {
-          "kind": "hana-cloud",
+        "[hybrid]": {
           "vcap": {
-            "label": "service-manager",
-            "plan": "container",
             "name": "mtxs-reviews-db"
           }
         }
       },
       "[production]": {
         "auth": "xsuaa",
-        "db": "hana"
+        "db": "hana-mt"
       }
     }
   }
