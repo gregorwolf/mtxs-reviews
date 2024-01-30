@@ -4,6 +4,8 @@ This project demonstrates the integration to another CAP multitenant application
 
 To achieve this funcionality in a multitenant application we make use of a dynamically defined user provided service that gets its credentials from the service manager instance of the mtxs-bookshop app.
 
+![Architecture](./documentation/architecture.png)
+
 ## Setup
 
 ### Local Development
