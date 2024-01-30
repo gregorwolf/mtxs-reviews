@@ -2,11 +2,17 @@
 GET http://localhost:4040/odata/v4/review
 Authorization: Basic alice:
 ### T1
+GET http://localhost:4040/odata/v4/review/getBookshopServiceManager()
+Authorization: Basic alice:
+###
+GET http://localhost:4040/odata/v4/review/getServiceBindingForTenantId(tenantId='t1')
+Authorization: Basic alice:
+###
+GET http://localhost:4040/odata/v4/review/Books
+Authorization: Basic alice:
+###
 GET http://localhost:4040/odata/v4/review/Reviews
 Authorization: Basic alice:
-### T2
-GET http://localhost:4040/odata/v4/review/Reviews
-Authorization: Basic erin:
 ###
 POST http://localhost:4040/odata/v4/review/Reviews
 Authorization: Basic alice:
@@ -18,3 +24,7 @@ Content-Type: application/json
   "title": "Average",
   "text": "OK but could be better"
 }
+
+### T2
+GET http://localhost:4040/odata/v4/review/Reviews
+Authorization: Basic erin:
