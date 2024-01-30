@@ -7,11 +7,13 @@
   "private": true,
   "dependencies": {
     "@sap/cds": "^7",
-    "@sap/cds-mtxs": "^1.9",
-    "express": "^4",
     "@sap/cds-hana": "^2",
+    "@sap/cds-mtxs": "^1.9",
+    "@sap/xsenv": "^4.2.0",
     "@sap/xssec": "^3",
-    "passport": "^0"
+    "express": "^4",
+    "passport": "^0",
+    "mtxs-bookshop": "https://github.com/gregorwolf/mtxs-bookshop"
   },
   "devDependencies": {
     "@cap-js/sqlite": "^1",
@@ -19,7 +21,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "start:hybrid": "export PORT=4040 && cds build --production && cp gen/srv/resources.tgz . && cds bind --exec cds-serve --profile hybrid",
+    "start:hybrid": "export PORT=4040 && cds build --production && rm -rf gen/db/src/gen/data && rm gen/db/src/gen/my.bookshop.* && cp gen/srv/resources.tgz . && cds bind --exec cds-serve --profile hybrid",
     "build": "mbt build",
     "deploy": "cf deploy mta_archives/mtxs-reviews_1.0.0.mtar"
   },

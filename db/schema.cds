@@ -3,6 +3,8 @@ using {
   managed
 } from '@sap/cds/common';
 
+using {my.bookshop as bookshop} from 'mtxs-bookshop/db/data-model';
+
 namespace sap.capire.reviews;
 
 // Reviewed subjects can be any entity that is uniquely identified
@@ -23,3 +25,7 @@ type Rating          : Integer enum {
   Poor  = 2;
   Worst = 1;
 }
+
+// Access via View SAP_CAPIRE_REVIEWS_BOOKS
+@cds.persistence.exists
+entity Books : bookshop.Books {}
