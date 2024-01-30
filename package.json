@@ -19,7 +19,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "start:hybrid": "cds build --production && cp gen/srv/resources.tgz . && cds bind --exec cds-serve --profile hybrid",
+    "start:hybrid": "export PORT=4040 && cds build --production && cp gen/srv/resources.tgz . && cds bind --exec cds-serve --profile hybrid",
     "build": "mbt build",
     "deploy": "cf deploy mta_archives/mtxs-reviews_1.0.0.mtar"
   },

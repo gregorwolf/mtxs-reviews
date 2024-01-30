@@ -1,14 +1,14 @@
 ###
-GET http://localhost:4004/odata/v4/review
+GET http://localhost:4040/odata/v4/review
 Authorization: Basic alice:
 ### T1
-GET http://localhost:4004/odata/v4/review/Reviews
+GET http://localhost:4040/odata/v4/review/Reviews
 Authorization: Basic alice:
 ### T2
-GET http://localhost:4004/odata/v4/review/Reviews
+GET http://localhost:4040/odata/v4/review/Reviews
 Authorization: Basic erin:
 ###
-POST http://localhost:4004/odata/v4/review/Reviews
+POST http://localhost:4040/odata/v4/review/Reviews
 Authorization: Basic alice:
 Content-Type: application/json
 

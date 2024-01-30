@@ -1,7 +1,7 @@
 # Sidecar
 #@port=4005
 # Main Service
-@port=4004
+@port=4040
 ###
 POST http://localhost:{{port}}/-/cds/deployment/subscribe HTTP/1.1
 Content-Type: application/json
