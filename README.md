@@ -1,18 +1,12 @@
-# Getting Started
+# Multitenant CAP Reviews
 
-Welcome to your new project.
+This project demonstrates the integration to another CAP multitenant application using HANA Synonyms. The application providing the Books entity is [mtxs-bookshop](https://github.com/gregorwolf/mtxs-bookshop). The mtxs-bookshop defines HANA Roles ([BOOKSHOP.hdbrole](https://github.com/gregorwolf/mtxs-bookshop/blob/main/db/src/BOOKSHOP.hdbrole) and [BOOKSHOP_O.hdbrole](https://github.com/gregorwolf/mtxs-bookshop/blob/main/db/src/BOOKSHOP_O.hdbrole)) that allow this app to access the HANA Table `MY_BOOKSHOP_BOOKS`.
 
-It contains these folders and files, following our recommended project layout:
-
-| File or Folder | Purpose                              |
-| -------------- | ------------------------------------ |
-| `app/`         | content for UI frontends goes here   |
-| `db/`          | your domain models and data go here  |
-| `srv/`         | your service models and code go here |
-| `package.json` | project metadata and configuration   |
-| `readme.md`    | this getting started guide           |
+To achieve this funcionality in a multitenant application we make use of a dynamically defined user provided service that gets its credentials from the service manager instance of the mtxs-bookshop app.
 
 ## Setup
+
+### Local Development
 
 ```
 cf create-service-key mtxs-reviews-db mtxs-reviews-db-key
