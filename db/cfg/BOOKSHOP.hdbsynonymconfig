@@ -1,0 +1,8 @@
+{
+    "BOOKSHOP_BOOKS": {
+        "target": {
+            "schema.configure": "ServiceName_1/schema",
+            "object": "MY_BOOKSHOP_BOOKS"
+        }
+    }
+}

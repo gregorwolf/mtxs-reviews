@@ -1,0 +1,14 @@
+{
+    "ServiceName_1": {
+        "object_owner": {
+            "container_roles": [
+                "BOOKSHOP_O#"
+            ]
+        },
+        "application_user": {
+            "container_roles": [
+                "BOOKSHOP"
+            ]
+        }
+    }
+}
