@@ -28,6 +28,7 @@ modules:
           mtx-url: ${default-url}
     requires:
       - name: mtxs-reviews-db
+      - name: mtxs-bookshop-db
       - name: mtxs-reviews-auth
       - name: mtxs-reviews-registry
       - name: app-api
