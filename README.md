@@ -27,3 +27,18 @@ cds bind -2 mtxs-bookshop-db
 ```
 
 Edit `.cdsrc-private.json` and paste the backup. Replace "name": "db" with "name": "mtxs-bookshop-db" for the "instance": "mtxs-bookshop-db".
+
+To avoid issues with a wrong binding selection make sure to [oversteer the default VCAP lookup](https://cap.cloud.sap/docs/releases/dec23#changes-in-node-js) by this configuration in `.cdsrc-private.json`:
+
+```
+        "vcap": {
+          "name": "mtxs-reviews-db",
+          "label": false
+        }
+
+
+        "vcap": {
+          "name": mtxs-bookshop-db",
+          "label": false
+        }
+```

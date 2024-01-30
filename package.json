@@ -37,7 +37,13 @@
       },
       "[production]": {
         "auth": "xsuaa",
-        "db": "hana-mt"
+        "db": {
+          "kind": "hana-mt",
+          "vcap": {
+            "name": "mtxs-reviews-db",
+            "label": false
+          }
+        }
       }
     }
   }
