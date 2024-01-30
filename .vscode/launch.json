@@ -1,4 +1,7 @@
 {
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
@@ -7,14 +10,18 @@
       "type": "node",
       "cwd": "${workspaceFolder}",
       "runtimeExecutable": "cds",
-      "args": [
-        "serve",
-        "--with-mocks",
-        "--in-memory?"
-      ],
-      "skipFiles": [
-        "<node_internals>/**"
-      ]
+      "args": ["serve", "--with-mocks", "--in-memory?"],
+      "skipFiles": ["<node_internals>/**"]
+    },
+    {
+      "command": "cds bind --exec cds-serve --profile hybrid",
+      "name": "cds run hybrid",
+      "request": "launch",
+      "type": "node-terminal",
+      "env": {
+        "PORT": "4040"
+      },
+      "skipFiles": ["<node_internals>/**"]
     }
   ]
 }
