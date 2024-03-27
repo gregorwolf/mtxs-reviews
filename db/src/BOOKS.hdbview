@@ -1,5 +1,9 @@
 VIEW sap_capire_reviews_books AS SELECT
   "ID"    AS id,
+  "CREATEDAT" AS createdat,
+  "CREATEDBY" AS createdby,
+  "MODIFIEDAT" AS modifiedat,
+  "MODIFIEDBY" AS modifiedby,
   "TITLE" AS title,
   "STOCK" AS stock,
   "AUTHOR_ID" AS author_id
