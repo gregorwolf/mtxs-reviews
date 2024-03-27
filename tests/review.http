@@ -8,9 +8,6 @@ Authorization: Basic alice:
 GET http://localhost:4040/odata/v4/review/getServiceBindingForTenantId(tenantId='t1')
 Authorization: Basic alice:
 ###
-GET http://localhost:4040/odata/v4/review/Books
-Authorization: Basic alice:
-###
 GET http://localhost:4040/odata/v4/review/Reviews
 Authorization: Basic alice:
 ###
@@ -28,3 +25,17 @@ Content-Type: application/json
 ### T2
 GET http://localhost:4040/odata/v4/review/Reviews
 Authorization: Basic erin:
+###
+# @name getBooks
+GET http://localhost:4040/odata/v4/review/Books
+Authorization: Basic alice:
+###
+@bookId={{getBooks.response.body.$.value[0].ID}}
+###
+PATCH http://localhost:4040/odata/v4/review/Books({{bookId}})
+Authorization: Basic alice:
+Content-Type: application/json
+
+{
+  "stock": 500
+}
