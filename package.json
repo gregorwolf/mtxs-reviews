@@ -6,10 +6,13 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@sap-cloud-sdk/connectivity": "^3",
+    "@sap-cloud-sdk/http-client": "^3",
+    "@sap-cloud-sdk/util": "^3",
     "@sap/cds": "^7",
     "@sap/cds-hana": "^2",
-    "@sap/cds-mtxs": "^1.9",
-    "@sap/xsenv": "^4.2.0",
+    "@sap/cds-mtxs": "^1",
+    "@sap/xsenv": "^4",
     "@sap/xssec": "^3",
     "express": "^4",
     "passport": "^0",
@@ -26,12 +29,19 @@
     "deploy": "cf deploy mta_archives/mtxs-reviews_1.0.0.mtar"
   },
   "cds": {
+    "log": {
+      "levels": {
+        "review-service": "debug",
+        "remote": "debug"
+      }
+    },
     "requires": {
       "multitenancy": true,
       "db": {
         "[hybrid]": {
           "vcap": {
-            "name": "mtxs-reviews-db"
+            "name": "mtxs-reviews-db",
+            "label": false
           }
         }
       },
@@ -43,6 +53,14 @@
             "name": "mtxs-reviews-db",
             "label": false
           }
+        }
+      },
+      "BooksApiService": {
+        "kind": "odata",
+        "model": "node_modules/mtxs-bookshop/srv/books-api-service.cds",
+        "credentials": {
+          "destination": "mtxs-bookshop",
+          "path": "/odata/v4/books-api"
         }
       }
     }

@@ -11,9 +11,6 @@ const services = xsenv.getServices({
 });
 
 module.exports = cds.service.impl(async function () {
-  const db = await cds.connect.to("db");
-  const { Books: Books } = db.entities;
-
   this.on("getBookshopServiceManager", (req) => {
     return services.smbookshop;
   });
@@ -24,5 +21,10 @@ module.exports = cds.service.impl(async function () {
 
   this.on("UPDATE", "Books", async (req) => {
     LOG.debug("Books UPDATE request received");
+    const booksApi = await cds.connect.to("BooksApiService");
+    const { Books } = booksApi.entities;
+
+    const books = await booksApi.tx(req).run(SELECT.from(Books));
+    LOG.debug("Books from books_api", books);
   });
 });
