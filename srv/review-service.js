@@ -24,7 +24,16 @@ module.exports = cds.service.impl(async function () {
     const booksApi = await cds.connect.to("BooksApiService");
     const { Books } = booksApi.entities;
 
-    const books = await booksApi.tx(req).run(SELECT.from(Books));
+    const books = await booksApi
+      .tx(req)
+      .run(SELECT.from(Books).where({ ID: req.data.ID }));
     LOG.debug("Books from books_api", books);
+    // Updata stock of book in books_api
+    const result = await booksApi
+      .tx(req)
+      .run(
+        UPDATE(Books).set({ stock: req.data.stock }).where({ ID: req.data.ID })
+      );
+    LOG.debug("Books updated", result);
   });
 });
