@@ -25,8 +25,8 @@
   "scripts": {
     "start": "cds-serve",
     "start:hybrid": "export PORT=4040 && cds build --production && rm -rf gen/db/src/gen/data && rm gen/db/src/gen/my.bookshop.* && cp gen/srv/resources.tgz . && cds bind --exec cds-serve --profile hybrid",
-    "build": "mbt build",
-    "deploy": "cf deploy mta_archives/mtxs-reviews_1.0.0.mtar"
+    "build:cf": "mbt build",
+    "deploy:cf": "cf deploy mta_archives/mtxs-reviews_1.0.0.mtar"
   },
   "cds": {
     "log": {
