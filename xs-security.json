@@ -1,6 +1,10 @@
 {
   "scopes": [
     {
+      "name": "uaa.user",
+      "description": "UAA"
+    },
+    {
       "name": "$XSAPPNAME.mtcallback",
       "description": "Subscription via SaaS Registry",
       "grant-as-authority-to-apps": [
@@ -9,5 +13,15 @@
     }
   ],
   "attributes": [],
-  "role-templates": []
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": ["uaa.user"]
+    }
+  ],
+  "oauth2-configuration": {
+    "credential-types": ["binding-secret", "x509"],
+    "redirect-uris": ["https://*.hana.ondemand.com/**", "http://localhost:*/**"]
+  }
 }
