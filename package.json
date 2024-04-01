@@ -29,8 +29,13 @@
     "deploy:cf": "cf deploy mta_archives/mtxs-reviews_1.0.0.mtar"
   },
   "cds": {
+    "features": {
+      "kibana_formatter": false
+    },
     "log": {
+      "format": "plain",
       "levels": {
+        "mtx": "debug",
         "review-service": "debug",
         "remote": "debug"
       }
