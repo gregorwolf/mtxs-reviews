@@ -5,6 +5,17 @@ const {
   fillServiceReplacementCAP: fillServiceReplacement,
 } = require("./service-replacement-cap");
 
+// Read xsappname of services using xsenv
+const xsenv = require("@sap/xsenv");
+xsenv.loadEnv();
+const services = xsenv.getServices({
+  dest: { tag: "destination" },
+});
+// fill dependencies for cds.env.requires
+const dependencies = [];
+dependencies.push(services.dest.xsappname);
+cds.env.requires["cds.xt.SaasProvisioningService"] = { dependencies };
+
 cds.on("served", () => {
   const { "cds.xt.DeploymentService": ds } = cds.services;
 

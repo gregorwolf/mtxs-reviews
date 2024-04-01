@@ -100,3 +100,8 @@ resources:
       config:
         xsappname: mtxs-reviews-${org}-${space}
         tenant-mode: shared
+  - name: mtxs-reviews-destination
+    type: org.cloudfoundry.managed-service
+    parameters:
+      service: destination
+      service-plan: lite
