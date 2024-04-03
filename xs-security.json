@@ -1,4 +1,7 @@
 {
+  "xsappname": "mtxs-reviews-dev-azure-dev",
+  "tenant-mode": "shared",
+  "foreign-scope-references": ["$ACCEPT_GRANTED_SCOPES"],
   "scopes": [
     {
       "name": "uaa.user",
