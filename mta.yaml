@@ -35,6 +35,12 @@ modules:
       - name: app-api
         properties:
           SUBSCRIPTION_URL: ~{app-protocol}://\${tenant_subdomain}-~{app-uri}
+      - name: mtxs-bookshop-srv-api
+        group: destinations
+        properties:
+          name: mtxs-bookshop
+          url: ~{srv-url}
+          forwardAuthToken: true
 
   - name: mtxs-reviews
     type: approuter.nodejs
@@ -106,3 +112,7 @@ resources:
     parameters:
       service: destination
       service-plan: lite
+  - name: mtxs-bookshop-srv-api
+    parameters:
+      provider-id: mtxs-bookshop:mtxs-bookshop-srv-api
+    type: configuration
