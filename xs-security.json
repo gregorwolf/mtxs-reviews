@@ -23,6 +23,13 @@
       "scope-references": ["uaa.user"]
     }
   ],
+  "role-collections": [
+    {
+      "name": "MTXSReviewsTokenExchange",
+      "description": "MTXS Reviews Token Exchange",
+      "role-template-references": ["$XSAPPNAME.Token_Exchange"]
+    }
+  ],
   "oauth2-configuration": {
     "credential-types": ["binding-secret", "x509"],
     "redirect-uris": ["https://*.hana.ondemand.com/**", "http://localhost:*/**"]
