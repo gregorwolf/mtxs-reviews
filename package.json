@@ -6,7 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "engines": {
-    "node": "^18"
+    "node": "^20"
   },
   "dependencies": {
     "@sap-cloud-sdk/connectivity": "^3",
@@ -15,8 +15,8 @@
     "@sap/cds": "^7",
     "@sap/cds-hana": "^2",
     "@sap/cds-mtxs": "^1",
-    "@sap/xsenv": "^4",
-    "@sap/xssec": "^3",
+    "@sap/xsenv": "^5",
+    "@sap/xssec": "^4",
     "express": "^4",
     "passport": "^0",
     "mtxs-bookshop": "https://github.com/gregorwolf/mtxs-bookshop"
